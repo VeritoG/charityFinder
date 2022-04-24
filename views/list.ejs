@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs")  %> 
+    <title>Charity List</title>
+</head>
+<body>
+    <header>
+        <%- include("./partials/header.ejs")  %>
+    </header>
+    <main>
+        <section class="title-a">
+            <h2>Charities List</h2>
+        </section>
+        <section class="grid-2">
+            <aside class="filters">
+                <% if (charities.length == 1) { %>
+                    <p><%= charities.length %> result</p>
+                <% } else {%> 
+                    <p><%= charities.length %> results</p>
+                <% } %>     
+                <div>
+                    <h3>Organization home country</h3>
+                    <form action="/list/filter" method="GET">
+                        <% countriesUnique.forEach(country => { %>
+                            <%- include("./partials/filterOption.ejs", { country}) %> 
+                        <% }) %>
+                        <input type="submit" value="Aplicar" class="filter-button">
+                    </form>
+                </div>
+                <div>
+                    <h3>Countries the organization serves</h3>
+                    <form action="/list/filter" method="GET">
+                        <% countriesServiceUnique.forEach(country => { %>
+                            <%- include("./partials/filterOption.ejs", {country}) %> 
+                        <% }) %>
+                    </form>
+                </div>
+            </aside>
+            <div class="grid-cards">
+                <% charities.forEach((charity,i)=>{ %>
+                    <%- include("./partials/cardArticle.ejs", { charity: charity }) %> 
+                <% }) %> 
+            </div>
+        </section>
+    </main> 
+</body>
+</html>

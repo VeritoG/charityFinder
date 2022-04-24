@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif; }
+  body header {
+    background-color: rgba(0, 0, 0, 0.527);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10; }
+    body header .logo-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      body header .logo-menu a:first-child {
+        font-size: 20px; }
+      body header .logo-menu a {
+        color: white;
+        font-size: 30px;
+        text-decoration: none;
+        margin-right: 10px; }
+    body header .search-input-form {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none; }
+      body header .search-input-form .search-input {
+        width: 100%;
+        height: 100%;
+        outline: 0;
+        border: 0;
+        font-size: 24px;
+        background-color: transparent;
+        color: white; }
+      body header .search-input-form .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.589);
+        font-weight: bold; }
+    body header .search .close-icon {
+      display: none; }
+    body header .search a {
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      z-index: 2; }
+  body main .title-a {
+    background-image: url("../images/donations-03.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    z-index: -1;
+    position: relative;
+    top: -71px;
+    width: 100%; }
+    body main .title-a h2 {
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 0.493);
+      padding: 10px 60px;
+      color: lightgray; }
+  body main .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: -71px; }
+    body main .grid-2 .filters {
+      background-color: #bebebe;
+      padding: 20px; }
+      body main .grid-2 .filters p {
+        margin: 10px 0; }
+      body main .grid-2 .filters div {
+        padding-top: 5px; }
+        body main .grid-2 .filters div h3 {
+          font-weight: bold;
+          margin: 10px 0; }
+        body main .grid-2 .filters div form label {
+          display: flex;
+          align-items: center; }
+        body main .grid-2 .filters div form .filter-button {
+          background-color: #1aa778;
+          border: 0;
+          padding: 5px 10px;
+          margin-top: 10px;
+          margin-left: 5px; }
+  body main .grid-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 25px;
+    gap: 3%; }
+    body main .grid-cards .card {
+      background-color: transparent;
+      height: 250px;
+      perspective: 1000px; }
+      body main .grid-cards .card .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+        body main .grid-cards .card .card-inner .card-front, body main .grid-cards .card .card-inner .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+        body main .grid-cards .card .card-inner .card-front {
+          background-size: 100% 100%;
+          background-position: center;
+          color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        body main .grid-cards .card .card-inner .card-back {
+          background-color: #1aa778;
+          color: white;
+          transform: rotateY(180deg);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; }
+          body main .grid-cards .card .card-inner .card-back p {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            padding: 0 20px; }
+          body main .grid-cards .card .card-inner .card-back a {
+            text-decoration: none;
+            border: 1px solid white;
+            color: white;
+            padding: 10px;
+            margin-top: 15px; }
+          body main .grid-cards .card .card-inner .card-back a:hover {
+            border: 1px solid #106146;
+            color: #106146; }
+    body main .grid-cards .card:hover .card-inner {
+      transform: rotateY(180deg); }
+  body main .slideshow-container {
+    width: 100%;
+    height: 615px;
+    position: relative;
+    top: -71px;
+    z-index: -1;
+    overflow: hidden; }
+    body main .slideshow-container .slides {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 100% 100% 100%;
+      transform: translateY(0);
+      transition: transform 1s ease-in-out; }
+      body main .slideshow-container .slides .slide {
+        width: 100%;
+        height: 100%;
+        cursor: grab; }
+        body main .slideshow-container .slides .slide img {
+          height: 100%;
+          width: 100%; }
+    body main .slideshow-container .prev, body main .slideshow-container .next {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.274); }
+    body main .slideshow-container .prev:hover, body main .slideshow-container .next:hover {
+      background-color: rgba(0, 0, 0, 0.452); }
+    body main .slideshow-container .prev {
+      left: 0;
+      border-radius: 0 5px 5px 0; }
+    body main .slideshow-container .next {
+      right: 0;
+      border-radius: 5px 0 0 5px; }
+  body main .card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    margin-top: -45px; }
+    body main .card-container article {
+      padding: 0 15px; }
+      body main .card-container article h3 {
+        border-bottom: 2px solid #1aa778; }
+        body main .card-container article h3 .green {
+          color: #1aa778; }
+
+/*# sourceMappingURL=style.css.map */
